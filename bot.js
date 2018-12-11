@@ -9,17 +9,14 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.author.bot == true) {
-    } else {
-  let randPasta = pasta[Math.floor(Math.random()*pasta.length)];
-  console.log(randPasta)
-    console.log(pasta.indexOf(msg.member.displayName) == -1)
-    // if (pasta.indexOf(msg.member.displayName) == -1) {
-      msg.member.setNickname(randPasta)
-        .then(console.log("Changed " + msg.author.username + "'s succesfully"))
-        .catch(console.error);
-    // }
-}
+  if (msg.author.bot == true) return;
+  const randPasta = pasta[Math.floor(Math.random()*pasta.length)];
+  // if (pasta.indexOf(msg.member.displayName) == -1) {
+    msg.member.setNickname(randPasta)
+      .then(console.log("Changing " + msg.author.username + "'s succesfully"))
+      .catch(console.error);
+  // }
+
 });
 
 client.login('token');
