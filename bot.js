@@ -13,7 +13,7 @@ client.on('message', msg => {
   const randPasta = pasta[Math.floor(Math.random()*pasta.length)];
   // if (pasta.indexOf(msg.member.displayName) == -1) {
     msg.member.setNickname(randPasta)
-      .then(console.log(`Changed ${msg.author.username}'s nickname to ${randPasta}!`))
+      .then(console.log(`Changing ${msg.author.username}'s nickname to ${randPasta}!`))
       .catch(console.error);
   // }
 
