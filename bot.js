@@ -10,6 +10,10 @@ client.on('ready', () => {
 client.on('message', msg => {
   if (msg.author.bot)
       return;
+  
+  if (msg.author.id === '105122038586286080')
+      return;
+  
   const randPasta = pasta[Math.floor(Math.random()*pasta.length)];
   // if (pasta.indexOf(msg.member.displayName) == -1) {
     msg.member.setNickname(randPasta)
