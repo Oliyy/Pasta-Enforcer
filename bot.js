@@ -12,7 +12,7 @@ client.on('message', msg => {
       return;
   const randPasta = pasta[Math.floor(Math.random()*pasta.length)];
   // if (pasta.indexOf(msg.member.displayName) == -1) {
-    if (!msg.guild.me.hasPermission('MANAGE_NICKNAMES') return;
+    if (!msg.guild.me.hasPermission('MANAGE_NICKNAMES')) return;
 
     msg.member.setNickname(randPasta)
       .then(console.log(`Changing ${msg.author.username}'s nickname to ${randPasta}!`))
